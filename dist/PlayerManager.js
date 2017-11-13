@@ -60,4 +60,3 @@ var PlayerManager = function () {
 }();
 
 module.exports = PlayerManager;
-//# sourceMappingURL=PlayerManager.js.map

@@ -33,4 +33,3 @@ var Player = function () {
 }();
 
 module.exports = Player;
-//# sourceMappingURL=Player.js.map

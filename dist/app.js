@@ -36,6 +36,11 @@ var app = bot.app;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.get('/', function (req, res) {
+    res.send("App is running..");
+    res.end();
+});
+
 app.get('/getallplayer', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
     var listPlayer = playerManager.getPlayers();
@@ -89,5 +94,4 @@ app.post('/addplayer', function (req, res) {
 
 env(__dirname + '/.env');
 
-bot.start(process.env.PORT);
-//# sourceMappingURL=app.js.map
+bot.start();
