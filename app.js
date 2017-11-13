@@ -21,6 +21,11 @@ let app = bot.app;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.get('/', function (req, res) {
+    res.send("App is running..");
+    res.end();
+});
+
 app.get('/getallplayer', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
     let listPlayer = playerManager.getPlayers();
