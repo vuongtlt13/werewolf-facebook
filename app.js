@@ -9,6 +9,7 @@ const playerManager = new PlayerManager();
 const express = require('express');
 const bodyParser = require('body-parser');
 
+
 const bot = new BootBot({
     accessToken: 'EAADyUFgrJA4BAFwDILiDLQawohPtZAxIhFzfB0Nijnv44sgsEN5aCskQTLiL7NgL6ZBdO1LHlaSRTDfazbIDZCFS181Rymic0SJHyffe7S3go0i65Ru0Wnc8gokjTZBSfBg8yoz10xi030T6g0nncUaQXfkzXDfZAVCB9evPXTgZDZD',
     verifyToken: 'token',
@@ -17,10 +18,12 @@ const bot = new BootBot({
 
 let app = bot.app;
 
+app.use(express.static(__dirname + '/public'));
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', function (req, res) {
-    res.send("App is running..");
+    res.send('App is running...');
     res.end();
 });
 
