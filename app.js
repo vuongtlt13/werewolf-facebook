@@ -2,8 +2,6 @@ import {registerAction} from './registerAction';
 import PlayerManager from './PlayerManager';
 import Player from './Player';
 
-// const env = require('node-env-file');
-
 const BootBot = require('bootbot');
 
 export const playerManager = new PlayerManager();
@@ -76,7 +74,5 @@ app.post('/addplayer', function (req, res) {
 });
 
 registerAction(bot);
-
-// env(__dirname + '/.env');
 
 bot.start();
