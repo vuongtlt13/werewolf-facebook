@@ -1,8 +1,8 @@
-import {playerManager} from './app';
-import {askName} from './event';
-import Player from './Player';
+const {playerManager} = require('./app');
+const {askName}  = require('./event');
+const Player  = require('./Player');
 
-export function registerAction(bot) {
+function registerAction(bot) {
     bot.on('message', async (payload, chat) => {
         let sender = payload.sender.id;
         if (!playerManager.isExist(sender)) {
@@ -20,3 +20,5 @@ export function registerAction(bot) {
         }
     });
 }
+
+module.exports.registerAction = registerAction;

@@ -90,7 +90,7 @@ function askNamePlayer(conv, resolve) {
     conv.ask(question, answer, callbacks, options);
 }
 
-export async function askName(chat) {
+async function askName(chat) {
     return new Promise(async (resolve, reject) => {
         console.log('Ask name of the new player!');
         chat.conversation((conv) => {
@@ -98,3 +98,5 @@ export async function askName(chat) {
         });
     });
 }
+
+module.exports.askName = askName;

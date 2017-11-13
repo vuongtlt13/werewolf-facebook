@@ -1,15 +1,15 @@
-import {registerAction} from './registerAction';
-import PlayerManager from './PlayerManager';
-import Player from './Player';
+const {registerAction} = require('./registerAction');
+const PlayerManager = require('./PlayerManager');
+const Player = require('./Player');
 
 const BootBot = require('bootbot');
 
-export const playerManager = new PlayerManager();
+const playerManager = new PlayerManager();
 
 const express = require('express');
 const bodyParser = require('body-parser');
 
-export const bot = new BootBot({
+const bot = new BootBot({
     accessToken: 'EAADyUFgrJA4BAFwDILiDLQawohPtZAxIhFzfB0Nijnv44sgsEN5aCskQTLiL7NgL6ZBdO1LHlaSRTDfazbIDZCFS181Rymic0SJHyffe7S3go0i65Ru0Wnc8gokjTZBSfBg8yoz10xi030T6g0nncUaQXfkzXDfZAVCB9evPXTgZDZD',
     verifyToken: 'token',
     appSecret: '136216e4f5392be84caa113d8a2b157b'
@@ -76,3 +76,6 @@ app.post('/addplayer', function (req, res) {
 registerAction(bot);
 
 bot.start();
+
+module.exports.playerManager = playerManager;
+module.exports.bot = bot;

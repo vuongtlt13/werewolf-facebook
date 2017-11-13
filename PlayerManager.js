@@ -1,5 +1,5 @@
-import Player from './Player';
-import {bot} from './app';
+const Player = require('./Player');
+const {bot} = require('./app');
 
 class PlayerManager {
     constructor() {
