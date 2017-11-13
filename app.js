@@ -79,4 +79,4 @@ registerAction(bot);
 
 env(__dirname + '/.env');
 
-bot.start(process.env.PORT);
+bot.start();
