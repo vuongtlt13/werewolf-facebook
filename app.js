@@ -2,7 +2,7 @@ import {registerAction} from './registerAction';
 import PlayerManager from './PlayerManager';
 import Player from './Player';
 
-const env = require('node-env-file');
+// const env = require('node-env-file');
 
 const BootBot = require('bootbot');
 
@@ -77,6 +77,6 @@ app.post('/addplayer', function (req, res) {
 
 registerAction(bot);
 
-env(__dirname + '/.env');
+// env(__dirname + '/.env');
 
 bot.start();

@@ -17,7 +17,7 @@ var _Player2 = _interopRequireDefault(_Player);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var env = require('node-env-file');
+// const env = require('node-env-file');
 
 var BootBot = require('bootbot');
 
@@ -92,6 +92,6 @@ app.post('/addplayer', function (req, res) {
 
 (0, _registerAction.registerAction)(bot);
 
-env(__dirname + '/.env');
+// env(__dirname + '/.env');
 
 bot.start();
