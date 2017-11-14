@@ -1,15 +1,15 @@
 function askToConfirm(conv, resolve, name) {
-    var question = {
+    const question = {
         text: 'Your nick name is "' + name + '", right?',
         quickReplies: ['YES', 'NO'],
     };
 
-    var answer = (payload, convo) => {
+    const answer = (payload, convo) => {
         console.log("Ask again!");
         askToConfirm(conv, resolve, name);
     };
 
-    var callbacks = [
+    const callbacks = [
         {
             event: 'attachment',
             callback: (payload) => {
@@ -43,7 +43,7 @@ function askToConfirm(conv, resolve, name) {
         },
     ];
 
-    var options = {
+    const options = {
         typing: true // Send a typing indicator before asking the question
     };
 
@@ -51,15 +51,15 @@ function askToConfirm(conv, resolve, name) {
 }
 
 function askNamePlayer(conv, resolve) {
-    var question = "What's your nickname?";
+    const question = "What's your nickname?";
 
-    var answer = (payload, convo) => {
+    const answer = (payload, convo) => {
         // console.log(payload);
         console.log("Name of player is ", payload.message.text);
         askToConfirm(conv, resolve, payload.message.text);
     };
 
-    var callbacks = [
+    const callbacks = [
         {
             event: 'attachment',
             callback: (payload) => {
@@ -83,14 +83,14 @@ function askNamePlayer(conv, resolve) {
         },
     ];
 
-    var options = {
+    const options = {
         typing: true // Send a typing indicator before asking the question
     };
 
     conv.ask(question, answer, callbacks, options);
 }
 
-async function askName(chat) {
+export async function askName(chat) {
     return new Promise(async (resolve, reject) => {
         console.log('Ask name of the new player!');
         chat.conversation((conv) => {
@@ -98,5 +98,3 @@ async function askName(chat) {
         });
     });
 }
-
-module.exports.askName = askName;
