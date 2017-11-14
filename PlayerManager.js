@@ -1,5 +1,5 @@
-const Player = require('./Player');
-const {bot} = require('./app');
+var Player = require('./Player');
+var {bot} = require('./app');
 
 class PlayerManager {
     constructor() {

@@ -1,16 +1,16 @@
-const {registerAction} = require('./registerAction');
-const PlayerManager = require('./PlayerManager');
-const Player = require('./Player');
+var {registerAction} = require('./registerAction');
+var PlayerManager = require('./PlayerManager');
+var Player = require('./Player');
 
-const BootBot = require('bootbot');
+var BootBot = require('bootbot');
 
-const playerManager = new PlayerManager();
+var playerManager = new PlayerManager();
 
-const express = require('express');
-const bodyParser = require('body-parser');
+var express = require('express');
+var bodyParser = require('body-parser');
 
 
-const bot = new BootBot({
+var bot = new BootBot({
     accessToken: 'EAADyUFgrJA4BAFwDILiDLQawohPtZAxIhFzfB0Nijnv44sgsEN5aCskQTLiL7NgL6ZBdO1LHlaSRTDfazbIDZCFS181Rymic0SJHyffe7S3go0i65Ru0Wnc8gokjTZBSfBg8yoz10xi030T6g0nncUaQXfkzXDfZAVCB9evPXTgZDZD',
     verifyToken: 'token',
     appSecret: '136216e4f5392be84caa113d8a2b157b'

@@ -1,15 +1,15 @@
 function askToConfirm(conv, resolve, name) {
-    const question = {
+    var question = {
         text: 'Your nick name is "' + name + '", right?',
         quickReplies: ['YES', 'NO'],
     };
 
-    const answer = (payload, convo) => {
+    var answer = (payload, convo) => {
         console.log("Ask again!");
         askToConfirm(conv, resolve, name);
     };
 
-    const callbacks = [
+    var callbacks = [
         {
             event: 'attachment',
             callback: (payload) => {
@@ -43,7 +43,7 @@ function askToConfirm(conv, resolve, name) {
         },
     ];
 
-    const options = {
+    var options = {
         typing: true // Send a typing indicator before asking the question
     };
 
@@ -51,15 +51,15 @@ function askToConfirm(conv, resolve, name) {
 }
 
 function askNamePlayer(conv, resolve) {
-    const question = "What's your nickname?";
+    var question = "What's your nickname?";
 
-    const answer = (payload, convo) => {
+    var answer = (payload, convo) => {
         // console.log(payload);
         console.log("Name of player is ", payload.message.text);
         askToConfirm(conv, resolve, payload.message.text);
     };
 
-    const callbacks = [
+    var callbacks = [
         {
             event: 'attachment',
             callback: (payload) => {
@@ -83,7 +83,7 @@ function askNamePlayer(conv, resolve) {
         },
     ];
 
-    const options = {
+    var options = {
         typing: true // Send a typing indicator before asking the question
     };
 
